@@ -23,8 +23,8 @@ void llmake()
     newnode=(struct node *)malloc(sizeof(struct node));
     printf("\nEnter data for node %d : ",i);
     scanf("%d",&newnode->data);
-    newnode->nxt=NULL;
-    prenode->nxt=newnode;
+    newnode->nxt=NULL; //here nxt=next node pointor
+    prenode->nxt=newnode; //here nxt=next node pointor
     prenode=newnode;
     printf("\tWant to enter more ? (y/n) : ");
     scanf("%s",&j);
@@ -59,7 +59,7 @@ int deletion()
 	return 0;
       }
       else if(prenode->data==del)
-      { head=prenode->nxt;
+      { head=prenode->nxt; //here nxt=next node pointor
 	printf("Node with matching data deleted successfully.\n");
 	if(head==NULL)
 	{ printf("List is now empty !\n");
@@ -77,7 +77,7 @@ int deletion()
 	break;
       }
       else
-      { prenode=prenode->nxt;
+      { prenode=prenode->nxt; //here nxt=next node pointor
 	if(prenode==NULL)
 	{ printf("\nElement not found !!!\n"); }
       }
